@@ -16,7 +16,8 @@ sequenceDiagram
     participant P as 相手の人間
     H->>A: 何を聞きたいか伝える
     A->>C: REQUEST.md（聞き方・前提・返し方を書いた 1 枚）
-    C->>P: 1 項目ずつ会話でヒアリング<br/>（まとめて聞くときは HTML フォーム）
+    C->>P: 1 項目ずつ会話でヒアリング
+    Note over C,P: まとめて聞くときは HTML フォーム
     P->>C: 断片的な回答・資料・URL
     C->>A: BRIEF.md（JSON ブロック入り・そのまま実装に使える）
     A->>H: 反映

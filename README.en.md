@@ -16,7 +16,8 @@ sequenceDiagram
     participant P as Them
     H->>A: what you need to know
     A->>C: REQUEST.md (context, how to ask, how to answer)
-    Note over C,P: one item at a time<br/>an HTML form when there are many
+    Note over C,P: one item at a time
+    Note over C,P: an HTML form when there are many
     P->>C: partial answers, URLs, documents
     C->>A: BRIEF.md (with JSON blocks)
     A->>H: straight into the work
