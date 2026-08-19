@@ -37,10 +37,22 @@
 
 - ［what was asked but not settled, and why］
 
-## 4. Needs the other recipients
+## 4. Sources received
+
+| What | From | Read? |
+|---|---|---|
+| ［file / link / screenshot］ | ［who］ | yes / 🚨 partially / no |
+
+**Differences found:**
+
+| Item | Stated in REQUEST | In the material | Verdict |
+|---|---|---|---|
+| ［item］ | ［value］ | ［value］ | 🚨 differs / matches / unconfirmed |
+
+## 5. Needs the other recipients
 
 - ［items only a `cc` person can settle. Omit this section if `people` had one entry］
 
-## 5. Notes for the requester
+## 6. Notes for the requester
 
 - ［contradictions or things worth checking that you noticed］

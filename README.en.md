@@ -111,6 +111,23 @@ printing the brief into chat if it cannot write a file, and so on.
 A silent substitution creates a round trip to find out why the result looks unexpected,
 which is exactly what this protocol exists to remove.
 
+## Ask for material, not just answers
+
+Asking "is X correct?" makes the person recall, look up, and summarize. Most of that work
+disappears if they can hand over something that already exists.
+
+So every question carries this:
+
+> If you have a file, a link, or a screenshot about this, just send it as-is.
+> I will read it and tell you where it differs from what we have.
+
+**Never ask them to summarize.** Reading is the LLM's job. Screenshots, pasted chat logs,
+outdated documents -- take all of it. "Too messy to send" is the worst outcome.
+
+🚨 **And do not stop at receiving it.** `BRIEF.md` records **what arrived** and
+**how it differs from our values.** Without the diff, the requester redoes the same reading
+and nothing was saved.
+
 ## Usage
 
 ### If you are asking

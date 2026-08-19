@@ -247,7 +247,34 @@ produce an off-target interview.**
 ✅ Terms (explain every abbreviation in one line)
 ```
 
-### 4-4. 🚨 Do not characterize the person
+### 4-4. 🚨 Do not only ask for answers. Accept material
+
+**Asking "is X correct?" makes the person recall, look up, and summarize.
+Most of that work disappears if they can just hand something over.**
+
+So every question carries this:
+
+```markdown
+🚨 **Also accept material instead of an answer.**
+Say: "if you have a file, a link, a screenshot or a document about this,
+just hand it over -- I will read it and reconcile it against what we have."
+Read whatever they give you, extract the answer, and report the difference.
+```
+
+| ❌ Answers only | ✅ Material too |
+|---|---|
+| They recall and write it (slow, error-prone) | **They hand over what already exists** (seconds) |
+| "I think it was 105 days?" | The employment rules PDF -> **a certain figure** |
+| They stall deciding whether to answer or send | **Either is fine, so they do not stall** |
+
+- **Never ask them to summarize it.** "Pull out the relevant part" is just more work for them.
+  **They hand it over as-is; reading it is the LLM's job**
+- 🚨 **Reconcile it against what we already have and report the difference** (§5-7).
+  Receiving material and stopping there makes the requester redo the same reading
+- Screenshots, photos, pasted chat logs, outdated documents -- take all of it.
+  **"It is too messy to send" is the worst outcome**, so say that explicitly
+
+### 4-5. 🚨 Do not characterize the person
 
 Write **what needs explaining**, never **what kind of person they are**.
 
@@ -260,12 +287,12 @@ Write **what needs explaining**, never **what kind of person they are**.
 🚨 **`REQUEST.md` stays on their machine.**
 A characterization will be read exactly as written, whatever you meant by it.
 
-### 4-5. 🚨 `REQUEST.md` never comes back
+### 4-6. 🚨 `REQUEST.md` never comes back
 
 Once handed over, you cannot retract it. **No third-party personal data, no internal decisions,
 no other clients.** Have someone other than yourself read it first — another LLM counts.
 
-### 4-6. Keep secrets out of the body
+### 4-7. Keep secrets out of the body
 
 Deliver tokens and keys **through a separate channel**. In `REQUEST.md`, say only
 "you will receive this separately". Have their LLM **walk the person through the setup**
@@ -338,6 +365,35 @@ otherwise "did not write it" and "everything worked" look identical.
 
 ---
 
+### 5-7. 🚨 Record what material you received, and the differences you found
+
+When §4-4 gets you material, separate **what arrived**, **what you read from it**, and
+**how it differs from what we have**.
+
+```markdown
+## Sources received
+
+| What | From | Read? |
+|---|---|---|
+| 就業規則.pdf | owner (LINE) | yes |
+| Indeed job page | URL | yes |
+| Screenshot of the pay table | owner | 🚨 partially (blurred) |
+
+## Differences found
+
+| Item | On the site now | In the material | Verdict |
+|---|---|---|---|
+| 年間休日 | 105 days | **110 days** | 🚨 site is wrong |
+| 平均年齢 | 25 | (not mentioned) | unconfirmed |
+```
+
+- 🚨 **Never stop at "they sent me a document."** That makes the requester redo the reading
+- 🚨 **Say when you could not read something** -- do not mix it in with what you did read
+- If the material contradicts what the person said, **do not pick a winner.**
+  Write both and ask them
+
+---
+
 ## 6. What you do not have to follow
 
 - **Exact formatting.** If the items are there and nothing is guessed, it works
@@ -354,9 +410,12 @@ otherwise "did not write it" and "everything worked" look identical.
 - ❌ 🚨 **Silently substituting a fallback** (§3-3 — it creates the round trip you were removing)
 - ❌ 🚨 **Writing the body in a non-English language** (§2 — the reader is an LLM; 1.5–2x the tokens)
 - ❌ 🚨 **Translating quotes or proper nouns** (§2-2 — it destroys evidence and breaks matching)
-- ❌ 🚨 **Describing the person's technical level or character** (§4-4 — the file stays with them)
+- ❌ 🚨 **Describing the person's technical level or character** (§4-5 — the file stays with them)
 - ❌ Guessing in `BRIEF.md` (§5-1)
 - ❌ Returning structured data as prose (§5-2)
-- ❌ Putting secrets or third parties in `REQUEST.md` (§4-5 / §4-6)
-- ❌ Handing over an over-privileged token (§4-6)
+- ❌ Putting secrets or third parties in `REQUEST.md` (§4-6 / §4-7)
+- ❌ Handing over an over-privileged token (§4-7)
 - ❌ Omitting who decided (§5-3 — it forces a confirmation round trip)
+- ❌ 🚨 **Asking only for answers, never for material** (§4-4 — you are making them recall)
+- ❌ 🚨 **Asking them to summarize the material** (reading is the LLM's job)
+- ❌ 🚨 **Stopping at "they sent a document"** (§5-7 — without the diff, nothing was saved)

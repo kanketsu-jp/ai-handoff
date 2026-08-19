@@ -44,13 +44,26 @@ Do not assume. Try, then choose.
 🚨 **Whatever you could not do, record it in `BRIEF.md` §0** -- what failed, why,
 and what you did instead. Do not substitute silently.
 
-### 0-2. How to run the interview
+### 0-2. 🚨 Accept material, not just answers
+
+**On every topic, offer this before they start writing:**
+
+> このあたりの資料やファイル、リンク、スクショがあれば、**そのまま渡してもらえれば読みます。**
+> いまの内容と突き合わせて、違うところを僕がまとめます。
+
+- **Never ask them to summarize or extract.** They hand it over as-is; reading it is your job
+- Screenshots, photos, pasted chat logs, outdated documents -- take all of it.
+  Tell them explicitly that **messy is fine**; "too messy to send" is the worst outcome
+- 🚨 **Reconcile what you read against the values in this file and report the difference**
+  in `BRIEF.md`. Receiving material and stopping there saves nobody any work
+
+### 0-3. How to run the interview
 
 1. Work through "What I need to know" below **one topic at a time**
 2. Batch the questions only if your owner asks to answer in bulk
 3. If your owner says "that's enough for now", **write `BRIEF.md` immediately** (partial is fine)
 
-### 0-3. Rules for the `BRIEF.md` you produce
+### 0-4. Rules for the `BRIEF.md` you produce
 
 - 🚨 **Never guess.** Write `unconfirmed` for anything you did not establish
 - Return structured data as **JSON code blocks** (schemas are given per topic)
@@ -58,6 +71,7 @@ and what you did instead. Do not substitute silently.
 - 🚨 **Quote your owner verbatim, in their own language.** Do not summarize or translate
 - Attribute every quote with the speaker's `id` from `people`
 - Keep proper nouns (store names, people, URLs) exactly as written
+- Record every piece of material you received, and the differences you found in it
 - Write everything else in English
 
 ## 1. Context you do not have
