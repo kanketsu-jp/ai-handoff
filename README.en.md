@@ -56,11 +56,66 @@ not hold. Consumer apps that support it are limited.
 **One file is the only shape that does not need that assumption.** It is not a degraded version;
 it is the one with the fewest preconditions.
 
+## Both files are written in English
+
+The reader is an LLM, not a person. The same content in Japanese costs roughly
+**1.5-2x the tokens**, and that repeats on every round trip.
+
+Making the *conversation* English too would defeat the point, so **the spoken language
+is declared in front matter.**
+
+```yaml
+---
+protocol: ai-handoff/1
+lang: ja
+from: kazuma-horiike (KANKETSU Inc.)
+people:
+  - id: r-tanaka
+    to: primary
+    role: decision-maker
+    tech: non-eng
+    knows: html,css
+    gap: next.js,headless-cms
+    terms: explain-1line-on-first-use
+---
+```
+
+`lang` is **the language to speak to the human in**. The document stays English; only the
+conversation switches. **Quotes of what the person said, and proper nouns, stay in the original
+language** -- translating them destroys their value as evidence.
+
+## Nothing about a person goes in the body
+
+Write "this person is a non-engineer who..." in the body and **the person it describes will read it**.
+The file stays on their machine; it reads as an assessment, whatever you meant by it.
+
+So anything about a person goes in `people`, in a **short machine-readable form**.
+The LLM reads `gap` to decide how much to explain, and `decides` / `defers` to separate out
+**what this person cannot settle alone** from the start.
+
+🚨 **The LLM never reads that block out loud.** It only picks vocabulary and depth from it.
+Writing it short does not make it hidden -- **writing something that is fine to read** is the real rule.
+
+`people` is a list, so **a request can address several people.** If the LLM's owner is a `cc`,
+it returns the items only the `primary` can settle in a separate section of `BRIEF.md`.
+
+## The mechanism is never prescribed
+
+Even within Claude, running in a terminal, a desktop app or a phone changes
+**whether you can write a file at all, and whether you can connect to external tools.**
+
+So `REQUEST.md` states **only the goal**, and **the receiving LLM picks the means** --
+printing the brief into chat if it cannot write a file, and so on.
+
+🚨 **Whatever fallback it picked, and why, goes at the top of `BRIEF.md`.**
+A silent substitution creates a round trip to find out why the result looks unexpected,
+which is exactly what this protocol exists to remove.
+
 ## Usage
 
 ### If you are asking
 
-1. Copy [`templates/REQUEST.en.md`](templates/REQUEST.en.md) and fill it in
+1. Copy [`templates/REQUEST.md`](templates/REQUEST.md) and fill it in
 2. Send the file itself and say: *"Give this to your LLM and tell it to start asking."*
 3. Read the returned `BRIEF.md` with your own LLM
 
@@ -72,8 +127,8 @@ then go one item at a time.** Details in [`SPEC.en.md`](SPEC.en.md).
 ## Spec
 
 - [`SPEC.en.md`](SPEC.en.md) — the rules (what makes a `BRIEF.md` valid)
-- [`templates/REQUEST.en.md`](templates/REQUEST.en.md) — what the requester writes
-- [`templates/BRIEF.en.md`](templates/BRIEF.en.md) — what their LLM returns
+- [`templates/REQUEST.md`](templates/REQUEST.md) — what the requester writes
+- [`templates/BRIEF.md`](templates/BRIEF.md) — what their LLM returns
 
 ## License
 

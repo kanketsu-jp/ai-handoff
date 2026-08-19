@@ -1,36 +1,46 @@
-> このファイルは ［相手］ の LLM が書きました。
-> 読み手は依頼側の LLM です。プロトコル: https://github.com/kanketsu-jp/ai-handoff
+> Written by ［their］ LLM. The reader is the requester's LLM.
+> Protocol: https://github.com/kanketsu-jp/ai-handoff
 
-# ［案件名］ ヒアリング結果
+# ［Project］ — interview brief
 
-## 0. 進捗
+## 0. Environment
 
-- 回答済み: N / M 項目
-- 🚨 未着手: ［項目名］
-- この BRIEF は ［完了版 / 途中版］ です
+- Runtime: ［e.g. Claude Code / Claude desktop / Claude mobile］
+- Output: ［file on disk / download / pasted into chat］
+- 🚨 Could not do: ［what failed, why, and what was done instead. Write "nothing" if all worked］
 
-## 1. 決定一覧
+## 1. Progress
 
-| 項目 | 回答 | 決めた人 | 状態 |
+- Answered: N / M topics
+- 🚨 Not started: ［topics］
+- This brief is ［complete / partial］
+
+## 2. Decisions
+
+| Item | Answer | Decided by | Status |
 |---|---|---|---|
-| ［項目］ | ［回答］ | 本人 / **要確認** | 確定 / 保留 |
+| ［item］ | ［answer］ | owner / **needs confirmation** | settled / pending |
 
-## 2. ［項目名］
+## 3. ［Topic］
 
-**回答:**
+**Answer** (［id］):
 
-> ［利用者の言葉を、要約せずそのまま］
+> ［the owner's own words, verbatim, in their language -- not summarized, not translated］
 
-**構造化:**
+**Structured:**
 
 ```json
 { "…": "…" }
 ```
 
-**未確認:**
+**Unconfirmed:**
 
-- ［聞いたが決まらなかったこと。なぜ決まらなかったかも書く］
+- ［what was asked but not settled, and why］
 
-## 3. 依頼側への申し送り
+## 4. Needs the other recipients
 
-- ［LLM が気づいた矛盾・確認したほうがよい点］
+- ［items only a `cc` person can settle. Omit this section if `people` had one entry］
+
+## 5. Notes for the requester
+
+- ［contradictions or things worth checking that you noticed］

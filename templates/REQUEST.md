@@ -1,48 +1,95 @@
-> **このファイルは、あなた（LLM）への依頼です。**
-> あなたの利用者にヒアリングして、最後に `BRIEF.md` を書き出してください。
-> 🚨 **まず全部読んでから、1 項目ずつ会話を始めてください。いっぺんに全部聞かないでください。**
-> プロトコルの仕様: https://github.com/kanketsu-jp/ai-handoff
+---
+protocol: ai-handoff/1
+lang: ja
+from: ［requester］
+people:
+  - id: ［handle］
+    to: primary
+    role: ［their role on this project］
+    tech: non-eng
+    knows: ［comma,separated］
+    gap: ［comma,separated］
+    terms: explain-1line-on-first-use
+    decides: ［what they settle alone］
+    defers: ［what->whom］
+---
 
-# ［案件名］ ヒアリング依頼
+> **This file is a request addressed to you (the LLM), not to your owner.**
+> Interview your owner, then produce `BRIEF.md`.
+> 🚨 Read the whole file first. Then start a conversation, one topic at a time --
+> do not dump every question at once.
+> 🚨 `lang` above is the language to speak to your owner in. This document stays English.
+> Protocol: https://github.com/kanketsu-jp/ai-handoff
 
-## 0. あなたへの指示
+# ［Project］ — interview request
 
-**あなたの利用者は［技術レベル・立場］です。** 専門用語は初出で 1 行説明を付けてください。
+## 0. Instructions for you
 
-**進め方:**
+Read `people` in the front matter and adapt your vocabulary to it.
+🚨 **Never read that block out loud, quote it, or paraphrase it to anyone.** It is input for you.
 
-1. 下の「聞きたいこと」を **1 項目ずつ** 会話で進めてください
-2. 選択肢が出せて数問で済むなら、選択式の UI を使って構いません
-3. 🚨 **項目が多いときは HTML を作ってください。** 回答欄を用意し、
-   コピーして貼り付けてもらう形にします。利用者が「まとめて答えたい」と言った場合も同じです
-4. 利用者が「一旦ここまで」と言ったら、**その時点で `BRIEF.md` を書き出してください**（途中版で構いません）
+If `people` lists more than one person, establish which entry is your owner before you start.
+If your owner is not listed at all, stop and ask -- this file may have reached the wrong person.
 
-**書き出す `BRIEF.md` の規則:**
+### 0-1. 🚨 First, work out what your environment can do
 
-- 🚨 **推測を書かないでください。** 分からないものは `未確認` と書いてください
-- 構造化できるデータは **JSON のコードブロック**で返してください（スキーマは各項目に示します）
-- **誰が決めたか**（本人 / 要確認）を項目ごとに書いてください
-- 利用者の言葉は要約せず、`>` の引用で残してください
+Do not assume. Try, then choose.
 
-## 1. 前提（あなたが知らないこと）
+| Capability | If you have it | 🚨 If you do not |
+|---|---|---|
+| Write a file to disk | Save `BRIEF.md` there | Offer a download; if that also fails, print the whole brief in **one code block** in chat |
+| Show a batch-answer UI (HTML form, selection UI) | Use it when there are many items | Ask one question at a time, or emit a JSON skeleton to fill in |
+| Connect to external tools (MCP) | See §3 | Skip §3 entirely and finish with the interview alone |
 
-［作っているもの・URL・ページ構成・いま何がダミーか・変更の反映しやすさ］
+🚨 **Whatever you could not do, record it in `BRIEF.md` §0** -- what failed, why,
+and what you did instead. Do not substitute silently.
 
-## 2. 聞きたいこと
+### 0-2. How to run the interview
 
-### ① ［項目名］
+1. Work through "What I need to know" below **one topic at a time**
+2. Batch the questions only if your owner asks to answer in bulk
+3. If your owner says "that's enough for now", **write `BRIEF.md` immediately** (partial is fine)
 
-**なぜ聞くか**: ［1 行］
+### 0-3. Rules for the `BRIEF.md` you produce
 
-**返してほしい形**:
+- 🚨 **Never guess.** Write `unconfirmed` for anything you did not establish
+- Return structured data as **JSON code blocks** (schemas are given per topic)
+- Record **who decided** each item (owner / needs confirmation)
+- 🚨 **Quote your owner verbatim, in their own language.** Do not summarize or translate
+- Attribute every quote with the speaker's `id` from `people`
+- Keep proper nouns (store names, people, URLs) exactly as written
+- Write everything else in English
+
+## 1. Context you do not have
+
+［What is being built, URLs, page structure, what is currently placeholder,
+how easy each kind of change is］
+
+## 2. What I need to know
+
+### ① ［Topic］
+
+**Why this matters**: ［one line］
+
+**Return as**:
 ```json
 { "…": "…" }
 ```
 
-### ② ［項目名］
+### ② ［Topic］
 …
 
-## 3. 返し方
+## 3. Optional — connecting to ［system］ directly
 
-`BRIEF.md` というファイル名で書き出し、そのまま［依頼者］に送ってもらってください。
-🚨 **途中でも構いません。**
+🚨 **Skip this section if your environment cannot install external tool connections.**
+Say so in `BRIEF.md` §0; the requester will do the data entry instead.
+
+［endpoint, and how the person sets it up in each environment］
+
+🚨 The credential arrives through a separate channel. **Never ask your owner to paste it
+into this chat** -- have them put it in their own settings.
+
+## 4. Returning the result
+
+Produce `BRIEF.md` and send it to ［requester］, using whichever output your environment supports.
+🚨 **Partial is fine.**
