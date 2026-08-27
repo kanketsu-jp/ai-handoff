@@ -48,6 +48,10 @@ The protocol has exactly two artifacts.
 | `REQUEST.md` | the requester (with their LLM) | **their LLM** |
 | `BRIEF.md` | their LLM | **the requester's LLM** |
 
+🚨 That counts only what **crosses the boundary**. One more lives on your side --
+[`templates/PREFLIGHT.md`](./templates/PREFLIGHT.md) (**what to ask the requester before you
+write**, §4-0) -- and it is never handed over.
+
 **Both must be readable by a human, but neither is optimized for one.**
 They are optimized for an LLM being able to act on them directly.
 
@@ -215,6 +219,33 @@ Put the environment, what failed, why, and what you did instead at the top of `B
 
 ## 4. Rules for `REQUEST.md`
 
+### 4-0. 🚨 Interview the requester before you write
+
+**Before writing a line of `REQUEST.md`, question the requester.**
+Skip it and you produce a file with **the requester's own assumptions missing from it** --
+and you discover which ones only after the answers come back. This is the single largest
+source of extra round trips.
+
+The questionnaire is [`templates/PREFLIGHT.md`](./templates/PREFLIGHT.md).
+**It never crosses the boundary** (§1 counts only what does). Use it locally, fold the answers
+into `REQUEST.md`, discard it.
+
+Eight questions.
+
+| # | What to ask | What breaks without it |
+|---|---|---|
+| 1 | Who receives it, and **what they can settle alone vs. pass on** | You ask someone to decide what they cannot decide |
+| 2 | 🚨 **What is already settled** (must not be re-asked) | You ask them to re-answer their own meeting |
+| 3 | 🚨 **What they already have** (minutes, past messages, drafts) | You make them invent from nothing; questions come out abstract |
+| 4 | **When it is needed**, and whether partial is acceptable | They aim for a completeness that arrives too late |
+| 5 | 🚨 Is this **new work, or work they already owe** | It reads as an extra chore piled on top |
+| 6 | **What happens to the answer** | They cannot judge how precise to be |
+| 7 | **Who sends it and how** | A finished file stalls on delivery |
+| 8 | Anything unrecoverable once sent (§4-6 / §4-7) | It goes somewhere you cannot take it back from |
+
+🚨 **2 and 3 carry most of the value.** A `REQUEST.md` written without them asks a person to
+work out, from scratch, things they have already said.
+
 ### 4-1. Declare in the first line that the reader is an LLM
 
 Right after the front matter, address **their LLM**, not the person.
@@ -235,10 +266,40 @@ Right after the front matter, address **their LLM**, not the person.
 🚨 Do not prescribe the mechanism (§3 — environments differ)
 ```
 
-### 4-3. Be generous with context
+#### 🚨 And keep each question short
+
+**Do not deliver three paragraphs of background and then ask.** They came to answer, not to
+read a briefing.
+
+```
+❌ context, context, context → finally, a question
+✅ one question + the one or two lines that bear on it → "say the word if you want detail"
+```
+
+**Context goes in the file, thick; it does not go into the conversation** (→ §4-3).
+The LLM holds all of it and surfaces only what this question needs.
+
+Have it offer depth **once, at the start**:
+
+```markdown
+> I can explain the reasoning behind any of this --
+> **just say "tell me more" and I will go deeper.**
+```
+
+Without that line, a short question reads as a shallow topic, and people answer by guessing.
+With it, only the people who need depth spend time on it.
+
+### 4-3. Be generous with context — 🚨 in the FILE, not in the conversation
 
 Their LLM knows nothing about your system. **Questions written without that context
 produce an off-target interview.**
+
+```
+file … thick. An LLM reads it, once
+🚨 conversation … thin. The LLM holds the context and spends one or two lines of it (§4-2)
+```
+
+**Confuse the two and the person is made to read your preamble.**
 
 ```
 ✅ What you are building (URL, page structure, dynamic routes)
@@ -302,6 +363,32 @@ rather than handling the value itself.
 Hand over an admin token and every "only touch this part" in `REQUEST.md` becomes decorative.
 
 ---
+
+### 4-8. 🚨 Never have them told what this is NOT
+
+**Corrections inside `REQUEST.md` are addressed to their LLM. They are not addressed to the
+person.**
+
+Write "this is not A, it is B" and the LLM will say exactly that, out loud. The person then
+wonders **why something is being denied** -- and the denial is a fact about your wording
+history, not about their work.
+
+```
+❌ "This is not a campaign. What we are building is…"
+❌ "This is not extra homework. It is the task assigned to you at…"
+✅ "What we are building is ⟨X⟩, and it is permanent"
+✅ "This is the task assigned to you at the meeting -- these two lines"
+```
+
+**Let the LLM hold the understanding and never voice it.** Write it like this:
+
+```markdown
+🚨 **Never tell your owner what this is NOT. State what it IS.**
+For you, silently: ⟨the correction⟩. 🚨 Hold that. Do not recite it.
+```
+
+Same family as §4-5 (do not characterize the person): **both are information about YOU, not
+about them**, and **the file stays in their hands** (§4-6).
 
 ## 5. Rules for `BRIEF.md`
 
@@ -419,3 +506,12 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
 - ❌ 🚨 **Asking only for answers, never for material** (§4-4 — you are making them recall)
 - ❌ 🚨 **Asking them to summarize the material** (reading is the LLM's job)
 - ❌ 🚨 **Stopping at "they sent a document"** (§5-7 — without the diff, nothing was saved)
+- ❌ 🚨 **Writing `REQUEST.md` without interviewing the requester first** (§4-0 — especially
+  "what is already settled" and "what they already have"; skip those and the file asks a person
+  to re-answer their own meeting)
+- ❌ 🚨 **Front-loading background before the question** (§4-2 — context in the file, one or two
+  lines in the conversation)
+- ❌ 🚨 **Never offering depth** (§4-2 — unoffered, a short question reads as a shallow one and
+  people guess)
+- ❌ 🚨 **Having the person told "this is not X"** (§4-8 — corrections are for the LLM; said
+  aloud they make the person wonder why they are being contradicted)

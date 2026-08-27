@@ -128,6 +128,57 @@ outdated documents -- take all of it. "Too messy to send" is the worst outcome.
 **how it differs from our values.** Without the diff, the requester redoes the same reading
 and nothing was saved.
 
+## Interview the requester before writing
+
+**Before writing a line of `REQUEST.md`, question the requester.**
+Skip it and you produce a file with **the requester's own assumptions missing from it** --
+and you find out which ones only after the answers come back.
+
+The questionnaire is [`templates/PREFLIGHT.md`](templates/PREFLIGHT.md). **It is never handed
+over** -- use it locally, fold the answers into `REQUEST.md`, discard it.
+
+Two of its questions carry most of the value.
+
+- **What is already settled** (must not be re-asked)
+- **What they already have** (minutes, past messages, drafts)
+
+🚨 Written without those two, the file asks a person to re-answer their own meeting.
+
+## Short questions. Depth on request
+
+**No three paragraphs of background before the question.** They came to answer, not to read
+a briefing.
+
+```
+❌ context, context, context → finally, a question
+✅ one question + the one or two lines that bear on it → "say the word for detail"
+```
+
+Context goes **in the file, thick**. It does **not** go into the conversation. The LLM holds
+all of it and spends only what this question needs.
+
+And it offers depth once, at the start:
+
+> I can explain the reasoning behind any of this --
+> **just say "tell me more" and I will go deeper.**
+
+Unoffered, a short question reads as a shallow topic and people answer by guessing.
+
+## Nobody is told what this is NOT
+
+Corrections in `REQUEST.md` are addressed to **their LLM**, not to the person.
+
+Write "this is not A, it is B" and the LLM says exactly that, out loud. The person then
+wonders **why they are being contradicted** -- and the denial is a fact about your wording
+history, not about their work.
+
+```
+❌ "This is not a campaign. What we are building is…"
+✅ "What we are building is ⟨X⟩, and it is permanent"
+```
+
+**Let the LLM hold the understanding and never voice it.**
+
 ## Usage
 
 ### If you are asking

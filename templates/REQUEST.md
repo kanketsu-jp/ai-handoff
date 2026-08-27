@@ -31,6 +31,18 @@ Read `people` in the front matter and adapt your vocabulary to it.
 If `people` lists more than one person, establish which entry is your owner before you start.
 If your owner is not listed at all, stop and ask -- this file may have reached the wrong person.
 
+### 0-0. 🚨 Never tell your owner what this is NOT. State what it IS.
+
+Corrections in this file are addressed to you. Said out loud, they make your owner wonder why
+something is being denied -- and the denial is about our wording, not about their work.
+
+```
+❌ 「これは〇〇ではありません。実際は…」
+✅ 「〇〇です」（the positive form, and nothing about what it is not）
+```
+
+For you, silently: ［the correction］. 🚨 Hold it. Do not recite it.
+
 ### 0-1. 🚨 First, work out what your environment can do
 
 Do not assume. Try, then choose.
@@ -62,6 +74,16 @@ and what you did instead. Do not substitute silently.
 1. Work through "What I need to know" below **one topic at a time**
 2. Batch the questions only if your owner asks to answer in bulk
 3. If your owner says "that's enough for now", **write `BRIEF.md` immediately** (partial is fine)
+
+🚨 **Keep each question short.** Your owner came to answer, not to read a briefing. One
+question plus the one or two lines that bear on the decision. Everything else in this file is
+context for YOU to hold, not to recite.
+
+**Say this once, at the start:**
+
+> 背景や理由も説明できるので、**「詳しく」と言ってもらえれば掘り下げます。**
+
+Without that, a short question reads as a shallow topic, and people answer by guessing.
 
 ### 0-4. Rules for the `BRIEF.md` you produce
 
