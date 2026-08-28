@@ -79,3 +79,26 @@ Tell them the one line to type:
 - 🚨 `unconfirmed` is a real answer. Do not fill it in yourself
 - A note with no value is **unanswered**, not a soft yes
 - Check the environment section: what they could not do, and what they did instead
+
+### Handing over a secret
+
+🚨 **Never put the value in `REQUEST.md`.** Write that it comes separately, and have their LLM
+walk them through putting it into their own settings.
+
+```
+✅ "the token comes by a separate channel"
+✅ their LLM says: "I will set the rest up; you only need to paste the token into your own
+   settings. The steps are 1. …"
+✅ the value ends up in their config file and never appears in the conversation
+🚨 match the token's scope to the person. An admin token makes "only touch X" meaningless
+```
+
+## Checklist
+
+The full list is SPEC §8. The four that get skipped most:
+
+- [ ] 🚨 Did you interview the requester first — **what is already settled**, **what they already have**?
+- [ ] Did you supply the JSON schema, rather than letting their LLM invent one?
+- [ ] Did someone other than you read it before it left?
+- [ ] 🚨 When the brief came back: **were the quotes summarized?** A summarized quote is not
+      evidence. Do not decide on it

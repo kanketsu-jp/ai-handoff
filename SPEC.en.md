@@ -515,3 +515,41 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
   people guess)
 - ❌ 🚨 **Having the person told "this is not X"** (§4-8 — corrections are for the LLM; said
   aloud they make the person wonder why they are being contradicted)
+
+## 8. Review checklist
+
+**Go through this before handing over.** §7 is what not to do; this is what you did.
+
+### 8-1. Before writing (§4-0)
+
+- [ ] Did you interview the requester — above all, **what is already settled** and **what they already have**?
+- [ ] Did you skip the questions that do not apply, and **say that you skipped them**?
+
+### 8-2. Inside `REQUEST.md`
+
+- [ ] Front matter present (`protocol` / `lang` / `from` / `people`)
+- [ ] The first line addresses the LLM (§4-1)
+- [ ] "Do not ask everything at once" and "partial is fine" are both stated (§4-2 / §5-4)
+- [ ] **You supplied the JSON schema** — their LLM does not invent one (§5-2)
+- [ ] Environment self-check is there, and **no mechanism is prescribed** (§3)
+- [ ] The offer to accept material appears **per topic**, not once (§4-4)
+- [ ] Depth is offered once, at the start (§4-2)
+- [ ] 🚨 Nothing is phrased so the person gets told what something is NOT (§4-8)
+- [ ] Person information lives in `people`, not the body, and **only what changes behaviour** (§2-2 / §4-5)
+- [ ] Quotes and proper nouns are marked not-to-be-translated (§2-5)
+
+### 8-3. 🚨 Before it leaves (it never comes back — §4-6)
+
+- [ ] No third parties' names or situations
+- [ ] None of your own deliberation, intent, or figures
+- [ ] Nothing from another project
+- [ ] No secrets — tokens, keys, internal hostnames or paths (§4-7)
+- [ ] **Someone other than you read it once** (another LLM counts)
+
+### 8-4. When `BRIEF.md` arrives
+
+- [ ] Pull out `unconfirmed` and "needs confirmation" first — **that is the entire next round**
+- [ ] Use the JSON as-is; do not re-derive structure from it
+- [ ] Check for guesses. If you find one, name it explicitly in the next request
+- [ ] 🚨 **Check whether quotes were summarized.** A summarized quote is not evidence — do not decide on it
+- [ ] Read `## 0. Environment`: what failed, and what they did instead
