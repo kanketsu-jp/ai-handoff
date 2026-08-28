@@ -28,11 +28,20 @@ sequenceDiagram
 **This protocol earns its keep when the person asking and the person answering do not share
 a vocabulary.**
 
+Any field. **Department, discipline, depth of expertise, language, culture** — wherever the
+gap is, the shape is the same.
+
 ```
-What the requester needs … something they can build from
-                           (how data is shaped, what branches key on, what to compute next)
-What the answerer has  … the business judgement. Not the terminology — nor should they need it
+What the requester needs … something they can act on directly, in their own terms
+What the answerer has  … the judgement from their side. Not your vocabulary, and they should not need it
 ```
+
+| Asking | Answering | Where it used to stall |
+|---|---|---|
+| Engineering | Business, marketing | Ask in "conditions" and "branches" and nothing comes back. **Ask in their terms and it does** |
+| Legal | The people doing the work | Requirements are phrased in two different registers |
+| Medicine, research | Patients, participants | Using the terminology as-is distorts the answer |
+| Japanese | English, anything else | Translate it and you can no longer check whether they said it (§2-5) |
 
 Until now a **human** closed that gap: the requester simplified their needs into a
 questionnaire, then translated the answers back up into technical terms.
@@ -42,8 +51,8 @@ ai-handoff makes **their LLM** do the translating.
 
 | | How the conversation feels | What comes out |
 |---|---|---|
-| **The person answering** | **Entirely in their own words.** No jargon, none of your constraints | — |
-| **The person asking** | — | **At the level they can build from.** Straight into the work |
+| **The person answering** | **Their own words, their own language.** No jargon, none of your constraints | — |
+| **The person asking** | — | **At their level, in their language.** Straight into the work |
 
 **One conversation, two registers.** That is what is being handed off.
 
@@ -105,7 +114,7 @@ is declared in front matter.**
 ---
 protocol: ai-handoff/1
 lang: ja
-from: kazuma-horiike (KANKETSU Inc.)
+from: ［your name］ (［your org］)
 people:
   - id: r-tanaka
     to: primary

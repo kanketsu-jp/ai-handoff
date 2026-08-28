@@ -43,11 +43,20 @@ Put the context in the file, cut the round trips to one, remove the copy-paste.
 
 **The person asking and the person answering usually do not share a vocabulary.**
 
+Any field. **Department, discipline, depth of expertise, language, culture** — wherever the
+gap is, the shape is the same.
+
 ```
-What the requester needs … something they can build from
-                           (how data is shaped, what branches key on, what to compute next)
-What the answerer has  … the business judgement. Not the terminology — nor should they need it
+What the requester needs … something they can act on directly, in their own terms
+What the answerer has  … the judgement from their side. Not your vocabulary, and they should not need it
 ```
+
+| Asking | Answering | Where it used to stall |
+|---|---|---|
+| Engineering | Business, marketing | Ask in "conditions" and "branches" and nothing comes back. **Ask in their terms and it does** |
+| Legal | The people doing the work | Requirements are phrased in two different registers |
+| Medicine, research | Patients, participants | Using the terminology as-is distorts the answer |
+| Japanese | English, anything else | Translate it and you can no longer check whether they said it (§2-5) |
 
 Traditionally a **human translated twice** to close that gap: simplify the need into a
 questionnaire, then translate the answers back up. **Both translations lose something.**
@@ -56,8 +65,8 @@ questionnaire, then translate the answers back up. **Both translations lose some
 
 | | Conversation | Deliverable |
 |---|---|---|
-| The person answering | **entirely in their own words** | — |
-| The person asking | — | **at the level they can build from** |
+| The person answering | **their own words, their own language** | — |
+| The person asking | — | **at their level, in their language** |
 
 🚨 **One conversation, two registers.** §4-9 and §5-8 are the rules that make it happen.
 
@@ -98,7 +107,7 @@ The very first lines of `REQUEST.md`:
 ---
 protocol: ai-handoff/1
 lang: ja
-from: kazuma-horiike (KANKETSU Inc.)
+from: ［your name］ (［your org］)
 people:
   - id: r-tanaka
     to: primary
