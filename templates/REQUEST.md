@@ -107,6 +107,10 @@ how easy each kind of change is］
 
 **Why this matters**: ［one line］
 
+🚨 **How deep this has to go**: ［what must be decidable from the answer］
+Keep asking, in their words, until you have that. Do not stop at the first answer that sounds
+complete — and do not hand it back as "they did not know".
+
 **Return as**:
 ```json
 { "…": "…" }

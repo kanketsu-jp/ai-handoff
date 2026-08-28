@@ -17,11 +17,48 @@ sequenceDiagram
     H->>A: what you need to know
     A->>C: REQUEST.md (context, how to ask, how to answer)
     Note over C,P: one item at a time
-    Note over C,P: an HTML form when there are many
+    Note over C,P: in their words; mechanism follows the environment
     P->>C: partial answers, URLs, documents
     C->>A: BRIEF.md (with JSON blocks)
     A->>H: straight into the work
 ```
+
+## The two ends need different words
+
+**This protocol earns its keep when the person asking and the person answering do not share
+a vocabulary.**
+
+```
+What the requester needs … something they can build from
+                           (how data is shaped, what branches key on, what to compute next)
+What the answerer has  … the business judgement. Not the terminology — nor should they need it
+```
+
+Until now a **human** closed that gap: the requester simplified their needs into a
+questionnaire, then translated the answers back up into technical terms.
+**Two translations, two losses.**
+
+ai-handoff makes **their LLM** do the translating.
+
+| | How the conversation feels | What comes out |
+|---|---|---|
+| **The person answering** | **Entirely in their own words.** No jargon, none of your constraints | — |
+| **The person asking** | — | **At the level they can build from.** Straight into the work |
+
+**One conversation, two registers.** That is what is being handed off.
+
+### What this puts in `REQUEST.md`
+
+"What to ask" is not enough. 🚨 **State how deep the answer has to go.**
+Their LLM asks in their language and **keeps digging, naturally, until it reaches the depth
+the requester needs.**
+
+- 🚨 **Do not assume shallowness.** `tech: non-eng` is a label, not a ceiling. If depth shows
+  up in some area during the conversation, follow it
+- 🚨 **Do not return a shallow answer with "they did not know".** Ask again, in their words,
+  inside the flow of the conversation
+- 🚨 **Write `BRIEF.md` at the requester's level.** The conversation was non-technical; the
+  deliverable does not have to be. Quotes stay in the speaker's own words — quotes are evidence
 
 ## Why this shape
 
