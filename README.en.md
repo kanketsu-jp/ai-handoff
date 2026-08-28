@@ -179,18 +179,34 @@ history, not about their work.
 
 **Let the LLM hold the understanding and never voice it.**
 
-## Usage
+## 🚨 If you are an LLM and someone gave you only this URL
 
-### If you are asking
+**No install required. This is a protocol — the URL and this README are enough.**
 
-1. Copy [`templates/REQUEST.md`](templates/REQUEST.md) and fill it in
-2. Send the file itself and say: *"Give this to your LLM and tell it to start asking."*
-3. Read the returned `BRIEF.md` with your own LLM
+First, work out **which side you are on**. Get this wrong and everything after it is wrong.
 
-### If you are the LLM being asked
+| What is happening in front of you | You are | Read next |
+|---|---|---|
+| Your owner says "I need to ask ⟨someone⟩ about ⟨something⟩" | **the requester's side** | 🚨 [`templates/PREFLIGHT.md`](templates/PREFLIGHT.md) |
+| Your owner handed you a file starting with `protocol: ai-handoff/1` | **the recipient's side** | that file's opening — it addresses you |
+| You cannot tell | — | **ask your owner** |
 
-Instructions for you are at the top of `REQUEST.md`. **Read all of it before asking anything,
-then go one item at a time.** Details in [`SPEC.en.md`](SPEC.en.md).
+### If you are on the requester's side
+
+🚨 **Do not start writing `REQUEST.md`.** Interview your owner first.
+
+1. Read [`templates/PREFLIGHT.md`](templates/PREFLIGHT.md). **Do not read the eight questions
+   aloud** — sort each into "I can answer this" / "does not apply" / "only they know", and ask
+   only the last group
+2. Fill in [`templates/REQUEST.md`](templates/REQUEST.md). Body in English, conversation in `lang:`
+3. Review before it leaves ([`SPEC.en.md`](SPEC.en.md) §8). **It never comes back**
+4. Have your owner send it as an **attachment**, not pasted into a message body
+
+### If you are on the recipient's side
+
+The file you were given opens with instructions addressed to you. **Read all of it before
+asking anything, then go one item at a time.** See [`SPEC.en.md`](SPEC.en.md) §3 (environment
+self-check) and §5 (how to answer).
 
 ## Install as a skill / slash command
 
