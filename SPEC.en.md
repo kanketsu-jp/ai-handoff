@@ -39,6 +39,28 @@ Put the context in the file, cut the round trips to one, remove the copy-paste.
 
 ---
 
+## 0.5 🚨 The two ends need different words (this is the point)
+
+**The person asking and the person answering usually do not share a vocabulary.**
+
+```
+What the requester needs … something they can build from
+                           (how data is shaped, what branches key on, what to compute next)
+What the answerer has  … the business judgement. Not the terminology — nor should they need it
+```
+
+Traditionally a **human translated twice** to close that gap: simplify the need into a
+questionnaire, then translate the answers back up. **Both translations lose something.**
+
+**This protocol hands the translating to their LLM.**
+
+| | Conversation | Deliverable |
+|---|---|---|
+| The person answering | **entirely in their own words** | — |
+| The person asking | — | **at the level they can build from** |
+
+🚨 **One conversation, two registers.** §4-9 and §5-8 are the rules that make it happen.
+
 ## 1. Artifacts
 
 The protocol has exactly two artifacts.
@@ -390,6 +412,31 @@ For you, silently: ⟨the correction⟩. 🚨 Hold that. Do not recite it.
 Same family as §4-5 (do not characterize the person): **both are information about YOU, not
 about them**, and **the file stays in their hands** (§4-6).
 
+### 4-9. 🚨 State how deep it has to go, not just what to ask
+
+**Without it, their LLM stops at the depth that is comfortable to answer** — which is not
+necessarily the depth you can build from. Per topic, say **what has to become decidable**.
+
+```markdown
+🚨 **How deep this has to go**: ⟨what must be decidable from the answer⟩
+Keep asking, in their words, until you have that. Do not stop at the first answer that
+sounds complete.
+```
+
+Three rules for their LLM:
+
+- 🚨 **Do not assume shallowness.** `tech` and `gap` (§2-2) are **a starting point, not a
+  ceiling.** If depth surfaces in some area, follow it
+- 🚨 **Do not return a shallow answer with "they did not know."** Ask again — **in their
+  words, inside the flow of the conversation.** Do not switch into jargon
+- 🚨 **Dig only while something is still undecidable.** Digging past a settled answer is an
+  interrogation, not an interview
+
+🚨 **A constraint is not a reason for them to ask for less.** When you state one — cost, a
+signal you cannot capture, a limit — **ask for what they actually want anyway**, and say that
+working out how is your side's problem. Otherwise the constraint quietly truncates the answer,
+and you never learn what they were going to ask for.
+
 ## 5. Rules for `BRIEF.md`
 
 ### 5-1. 🚨 Never guess. Write `unconfirmed`
@@ -481,6 +528,21 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
 
 ---
 
+### 5-8. 🚨 Write `BRIEF.md` at the requester's level
+
+**"The conversation was non-technical" and "the deliverable should be non-technical" are two
+different claims.** The reader is the requester's LLM, and the next stop is the work itself.
+**Write it at the level they can build from.**
+
+```
+conversation  "I want to send different things depending on whether they know the product"
+🚨 brief       express it as conditions, branches, and how the data is held (schema: §5-2)
+🟢 quote       "I want to send different things depending on…" ← their words, untouched (§5-5 / §2-5)
+```
+
+🚨 **Quotes are the one thing you never translate.** The quote is the evidence; the brief is
+the result of translating it. **Carry both.**
+
 ## 6. What you do not have to follow
 
 - **Exact formatting.** If the items are there and nothing is guessed, it works
@@ -515,6 +577,13 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
   people guess)
 - ❌ 🚨 **Having the person told "this is not X"** (§4-8 — corrections are for the LLM; said
   aloud they make the person wonder why they are being contradicted)
+- ❌ 🚨 **Not saying how deep it has to go** (§4-9 — they stop where answering is comfortable)
+- ❌ 🚨 **Treating `tech: non-eng` as a ceiling** (§4-9 — a starting point; follow depth when it appears)
+- ❌ 🚨 **Returning a shallow answer with "they did not know"** (§4-9 — ask once more, in their words)
+- ❌ 🚨 **Letting a stated constraint shrink what they ask for** (§4-9 — ask for what they want;
+  how to build it is your problem)
+- ❌ 🚨 **Writing `BRIEF.md` non-technically because the conversation was** (§5-8 —
+  the reader is the requester's LLM. **Quotes alone stay in their words**)
 
 ## 8. Review checklist
 
@@ -533,6 +602,8 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
 - [ ] **You supplied the JSON schema** — their LLM does not invent one (§5-2)
 - [ ] Environment self-check is there, and **no mechanism is prescribed** (§3)
 - [ ] The offer to accept material appears **per topic**, not once (§4-4)
+- [ ] 🚨 **Each topic says how deep the answer has to go** (§4-9)
+- [ ] 🚨 **Every constraint is paired with "tell us what you want anyway"** (§4-9)
 - [ ] Depth is offered once, at the start (§4-2)
 - [ ] 🚨 Nothing is phrased so the person gets told what something is NOT (§4-8)
 - [ ] Person information lives in `people`, not the body, and **only what changes behaviour** (§2-2 / §4-5)
@@ -548,6 +619,7 @@ When §4-4 gets you material, separate **what arrived**, **what you read from it
 
 ### 8-4. When `BRIEF.md` arrives
 
+- [ ] **Is it written at the level you can build from?** (§5-8 — quotes excepted)
 - [ ] Pull out `unconfirmed` and "needs confirmation" first — **that is the entire next round**
 - [ ] Use the JSON as-is; do not re-derive structure from it
 - [ ] Check for guesses. If you find one, name it explicitly in the next request
