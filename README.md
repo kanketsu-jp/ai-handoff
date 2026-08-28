@@ -273,6 +273,14 @@ Claude Code / OpenCode / Codex / Cursor ほかに対応しています。
 
 手で入れる場合は `skills/ai-handoff/SKILL.md` と `commands/ai-handoff.md` をコピーしてください。
 
+## 手順書（how-to）
+
+| | |
+|---|---|
+| [はじめての依頼](how-to/first-request.md) | PREFLIGHT から手渡しまで。詰まりやすい 5 つの症状と直し方つき |
+| [インストールせずに使う](how-to/without-installing.md) | URL を貼って一言だけ。Claude / ChatGPT のチャットで始める |
+| [`BRIEF.md` が返ってきたら](how-to/reading-the-brief.md) | 最初に見るのは `unconfirmed`。次の往復の作り方 |
+
 ## 仕様
 
 - [`SPEC.md`](SPEC.md) — プロトコルの規則（何を守れば `BRIEF.md` として通用するか）／ [English](SPEC.en.md)

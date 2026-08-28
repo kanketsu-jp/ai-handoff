@@ -274,6 +274,14 @@ You get:
 
 To install by hand, copy `skills/ai-handoff/SKILL.md` and `commands/ai-handoff.md`.
 
+## How-to
+
+| | |
+|---|---|
+| [Your first request](how-to/first-request.en.md) | PREFLIGHT through handing it over, with the five failures that actually happen |
+| [Without installing anything](how-to/without-installing.en.md) | A URL and one line, in a Claude or ChatGPT chat |
+| [When `BRIEF.md` comes back](how-to/reading-the-brief.en.md) | Read `unconfirmed` first. How to build the next round |
+
 ## Spec
 
 - [`SPEC.en.md`](SPEC.en.md) — the rules (what makes a `BRIEF.md` valid)
