@@ -9,6 +9,28 @@
 LLM will. If you skip this, the assumptions that live only in the requester's head stay there,
 and you find out which ones were missing only after the answers come back.
 
+## 🚨 Do not read these eight out loud
+
+**They are a checklist for you, not a script.** Before you open your mouth, go through them
+yourself and sort each one into:
+
+```
+① You can already answer it  → do not ask. State your answer and let them correct it
+② It does not apply here      → 🚨 do not ask, and say you are skipping it and why
+③ Only they can answer it     → ask. One at a time
+```
+
+Most requests do not need all eight. A piece of work with no deadline does not need §4 --
+asking "when do you need this by?" about something with no date wastes a turn and makes the
+requester explain that there is no answer.
+
+🚨 **Say what you skipped.** "期限は無い前提で書きます" takes one line and lets them stop you
+if you are wrong. Skipping silently is how a wrong assumption reaches the recipient.
+
+And keep each question short: **the question, plus the one or two lines that bear on it.**
+Offer depth once -- "理由も説明できるので、詳しくと言ってもらえれば掘り下げます" -- rather than
+front-loading it.
+
 ---
 
 ## 1. Who receives this, and what can they settle alone?
@@ -80,5 +102,7 @@ arrives too late.
 ## Before you write
 
 Two answers do most of the work: **§2 (already settled)** and **§3 (what they already have)**.
+🚨 Those two are the ones you can almost never answer yourself, so they are almost never in
+group ① or ②.
 🚨 If you cannot answer those two, do not start writing. You will produce a file that asks a
 person to invent, from nothing, things they have already said.

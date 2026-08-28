@@ -197,6 +197,26 @@ people:
 `REQUEST.md` の冒頭に、あなた（LLM）への指示が書いてあります。**先に全部読んでから、
 1 項目ずつ会話を始めてください。** 詳細は [`SPEC.md`](SPEC.md) にあります。
 
+## Skill / スラッシュコマンドとして入れる
+
+[`npx skills`](https://github.com/vercel-labs/skills) の配置に合わせてあるので、そのまま入ります。
+
+```bash
+npx skills add kanketsu-jp/ai-handoff
+```
+
+Claude Code / OpenCode / Codex / Cursor ほかに対応しています。
+
+入るもの:
+
+- **Skill `ai-handoff`** … 手順（PREFLIGHT → 書く → レビュー → 渡す → 読む）
+- **スラッシュコマンド `/ai-handoff <相手と、だいたいの用件>`** … 🚨 **PREFLIGHT から始まります。**
+  いきなり `REQUEST.md` を書きません。まず**あなた自身に聞きます**——ただし
+  **当てはまらない質問は飛ばして、飛ばしたことを言います**（期限の無い依頼に
+  「いつまでですか」と聞かない）
+
+手で入れる場合は `skills/ai-handoff/SKILL.md` と `commands/ai-handoff.md` をコピーしてください。
+
 ## 仕様
 
 - [`SPEC.md`](SPEC.md) — プロトコルの規則（何を守れば `BRIEF.md` として通用するか）／ [English](SPEC.en.md)

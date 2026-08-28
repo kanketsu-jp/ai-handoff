@@ -192,6 +192,26 @@ history, not about their work.
 Instructions for you are at the top of `REQUEST.md`. **Read all of it before asking anything,
 then go one item at a time.** Details in [`SPEC.en.md`](SPEC.en.md).
 
+## Install as a skill / slash command
+
+The layout matches [`npx skills`](https://github.com/vercel-labs/skills), so it installs as-is.
+
+```bash
+npx skills add kanketsu-jp/ai-handoff
+```
+
+Works with Claude Code, OpenCode, Codex, Cursor and others.
+
+You get:
+
+- **Skill `ai-handoff`** — the order of operations (PREFLIGHT → write → review → hand over → read)
+- **Slash command `/ai-handoff <who, and roughly what about>`** — 🚨 **starts at PREFLIGHT.**
+  It does not write `REQUEST.md` first. It interviews **you**, and it **skips the questions
+  that do not apply and tells you it skipped them** (no "when do you need this by?" on a piece
+  of work with no deadline)
+
+To install by hand, copy `skills/ai-handoff/SKILL.md` and `commands/ai-handoff.md`.
+
 ## Spec
 
 - [`SPEC.en.md`](SPEC.en.md) — the rules (what makes a `BRIEF.md` valid)
