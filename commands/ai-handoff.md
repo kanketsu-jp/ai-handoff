@@ -1,6 +1,6 @@
 ---
 description: Start an ai-handoff — interview me first (PREFLIGHT), then write a REQUEST.md addressed to the other person's LLM.
-argument-hint: <who you need to hear from, and roughly what about>
+argument-hint: "<who you need to hear from, and roughly what about>"
 allowed-tools: Read Write Edit Bash
 ---
 
