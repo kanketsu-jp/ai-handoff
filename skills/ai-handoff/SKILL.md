@@ -1,6 +1,6 @@
 ---
 name: ai-handoff
-description: Get information out of someone without sending them a questionnaire. Write a REQUEST.md addressed to THEIR LLM, have it interview them, and get back a BRIEF.md you can act on directly. Use when you need requirements, facts, or decisions from a client, a colleague, or another team — especially when questionnaires have gone unanswered before. Spec: https://github.com/kanketsu-jp/ai-handoff
+description: "Get information out of someone without sending them a questionnaire. Write a REQUEST.md addressed to THEIR LLM, have it interview them, and get back a BRIEF.md you can act on directly. Use when you need requirements, facts, or decisions from a client, a colleague, or another team — especially when questionnaires have gone unanswered before."
 argument-hint: [new|review|brief] <who you need to hear from>
 allowed-tools: Read Write Edit Bash
 ---
